@@ -2,18 +2,18 @@
 <rdf:RDF xml:base="http://id.loc.gov/ontologies/bibframe/" xmlns:bf="http://id.loc.gov/ontologies/bibframe/" xmlns:bf-abstract="http://bibframe.org/model-abstract/" xmlns:cc="http://creativecommons.org/ns#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:foaf="http://xmlns.com/foaf/0.1/" xmlns:marc-fields="http://bibframe.org/marc/" xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rda-fields="http://bibframe.org/rda/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:skos="http://www.w3.org/2004/02/skos/core#">
  <owl:Ontology rdf:about="http://id.loc.gov/ontologies/bibframe/">
   <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">
-   2.6.0
+   3.0.0
   </owl:versionInfo>
-  <owl:versionIRI rdf:resource="http://id.loc.gov/ontologies/bibframe-2-6-0/"/>
-  <owl:priorVersion rdf:resource="http://id.loc.gov/ontologies/bibframe-2-5-0/"/>
+  <owl:versionIRI rdf:resource="http://id.loc.gov/ontologies/bibframe-3-0-0/"/>
+  <owl:priorVersion rdf:resource="http://id.loc.gov/ontologies/bibframe-2-6-0/"/>
   <rdfs:label>
    BIBFRAME vocabulary
   </rdfs:label>
   <dcterms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">
-   2025-07-23T12:00:00.000-05:00
+   2025-12-01T12:00:00.000-05:00
   </dcterms:issued>
   <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">
-   2025-07-23T18:12:22.350407175-04:00
+   2025-12-01T19:01:04.896165157-05:00
   </dcterms:modified>
   <dcterms:description xml:lang="en">
    The Bibframe vocabulary consists of RDF classes and properties used for the description of items cataloged principally by libraries, but may also be used to describe items cataloged by museums and archives. Classes include the three core classes - Work, Instance, and Item - in addition to many more classes to support description. Properties describe characteristics of the resource being described as well as relationships among resources. For example: one Work might be a "translation of" another Work; an Instance may be an "instance of" a particular Bibframe Work. Other properties describe attributes of Works and Instances. For example: the Bibframe property "subject" expresses an important attribute of a Work (what the Work is about), and the property "extent" (e.g. number of pages) expresses an attribute of an Instance.
@@ -61,7 +61,7 @@
   </skos:definition>
   <bf-abstract:sort/>
   <bf-abstract:pos>
-   214
+   226
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1675,7 +1675,7 @@
    Ensemble
   </rdfs:label>
   <skos:definition>
-   Ensemble
+   Composition of the ensemble, including the size of the ensemble and the medium of performance components
   </skos:definition>
   <bf-abstract:sort>
    15eb
@@ -1688,6 +1688,9 @@
   </bf-abstract:status>
   <dcterms:modified>
    2021-06-09 (New [GH56])
+  </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (Revised definition [GH135])
   </dcterms:modified>
  </owl:Class>
  <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/MusicEnsemble">
@@ -1734,6 +1737,99 @@
    2016-04-21 (New)
   </dcterms:modified>
  </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/OpusNumber">
+  <rdfs:label>
+   Opus number
+  </rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Identifier"/>
+  <skos:definition>
+   An opus number assigned to a musical work
+  </skos:definition>
+  <bf-abstract:marcField>
+   383 $b
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   15h
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   70
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/SerialNumber">
+  <rdfs:label>
+   Serial number
+  </rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Identifier"/>
+  <skos:definition>
+   A serial number assigned to a work
+  </skos:definition>
+  <bf-abstract:marcField>
+   383 $a
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   15i
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   71
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/ThematicCatalogNumber">
+  <rdfs:label>
+   Thematic catalog number
+  </rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Identifier"/>
+  <skos:definition>
+   A numeric or alphanumeric designation of a musical work as found in a thematic index or catalog
+  </skos:definition>
+  <bf-abstract:marcField>
+   383 $c
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   15j
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   72
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/VideogamePlatformId">
+  <rdfs:label>
+   Videogame platform identifier
+  </rdfs:label>
+  <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Identifier"/>
+  <skos:definition>
+   An identifier assigned to a videogame platform
+  </skos:definition>
+  <bf-abstract:sort>
+   15k
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   73
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
  <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/GeographicCoverage">
   <rdfs:label>
    Geographic coverage
@@ -1745,7 +1841,7 @@
    18c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   70
+   74
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1771,7 +1867,7 @@
    18cb
   </bf-abstract:sort>
   <bf-abstract:pos>
-   71
+   75
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1794,7 +1890,7 @@
    18d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   72
+   76
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1814,7 +1910,7 @@
    18e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   73
+   77
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1837,7 +1933,7 @@
    18f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   74
+   78
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1857,7 +1953,7 @@
    18g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   75
+   79
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1877,7 +1973,7 @@
    18h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   76
+   80
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1897,7 +1993,7 @@
    18hb
   </bf-abstract:sort>
   <bf-abstract:pos>
-   77
+   81
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1918,7 +2014,7 @@
    18i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   78
+   82
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1942,7 +2038,7 @@
    18j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   79
+   83
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1966,7 +2062,7 @@
    18k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   80
+   84
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -1990,7 +2086,7 @@
    18l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   81
+   85
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2013,7 +2109,7 @@
    18m
   </bf-abstract:sort>
   <bf-abstract:pos>
-   82
+   86
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2033,7 +2129,7 @@
    18n
   </bf-abstract:sort>
   <bf-abstract:pos>
-   83
+   87
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2053,7 +2149,7 @@
    18o
   </bf-abstract:sort>
   <bf-abstract:pos>
-   84
+   88
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2073,7 +2169,7 @@
    18p
   </bf-abstract:sort>
   <bf-abstract:pos>
-   85
+   89
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2093,7 +2189,7 @@
    18q
   </bf-abstract:sort>
   <bf-abstract:pos>
-   86
+   90
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2113,7 +2209,7 @@
    18r
   </bf-abstract:sort>
   <bf-abstract:pos>
-   87
+   91
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2133,7 +2229,7 @@
    18rb
   </bf-abstract:sort>
   <bf-abstract:pos>
-   88
+   92
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2153,7 +2249,7 @@
    18s
   </bf-abstract:sort>
   <bf-abstract:pos>
-   89
+   93
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2173,7 +2269,7 @@
    18sb
   </bf-abstract:sort>
   <bf-abstract:pos>
-   90
+   94
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2199,7 +2295,7 @@
    18t
   </bf-abstract:sort>
   <bf-abstract:pos>
-   91
+   95
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2229,7 +2325,7 @@
    18u
   </bf-abstract:sort>
   <bf-abstract:pos>
-   92
+   96
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2256,7 +2352,7 @@
    18v
   </bf-abstract:sort>
   <bf-abstract:pos>
-   93
+   97
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2280,7 +2376,7 @@
    18w
   </bf-abstract:sort>
   <bf-abstract:pos>
-   94
+   98
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2304,7 +2400,7 @@
    18x
   </bf-abstract:sort>
   <bf-abstract:pos>
-   95
+   99
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2319,7 +2415,7 @@
   </rdfs:label>
   <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Classification"/>
   <skos:definition>
-   National Library of Agriculter number used for subject access
+   National Library of Agriculture number used for subject access
   </skos:definition>
   <bf-abstract:marcField>
    070--/a
@@ -2328,13 +2424,197 @@
    18y
   </bf-abstract:sort>
   <bf-abstract:pos>
-   96
+   100
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
   </bf-abstract:status>
   <dcterms:modified>
    2024-07-10 (New [GH119])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/DramaticRole">
+  <rdfs:label>
+   Dramatic role
+  </rdfs:label>
+  <skos:definition>
+   The dramatic role performed by a contributing agent
+  </skos:definition>
+  <bf-abstract:sort>
+   18ya
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   101
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/EnsembleSize">
+  <rdfs:label>
+   Ensemble size
+  </rdfs:label>
+  <skos:definition>
+   A designation of the size of the individual musical ensemble
+  </skos:definition>
+  <bf-abstract:marcField>
+   382 $s/$t
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   18yb
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   102
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/KeyMode">
+  <rdfs:label>
+   Key and mode
+  </rdfs:label>
+  <skos:definition>
+   Key and mode, or key only if no mode is present, of a music work
+  </skos:definition>
+  <bf-abstract:marcField>
+   384--/a
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   18yc
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   103
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/MediumComponent">
+  <rdfs:label>
+   Medium component
+  </rdfs:label>
+  <skos:definition>
+   An individual component of a medium of performance, gathering together the medium of performance, medium count, number of hands, and component qualifier
+  </skos:definition>
+  <bf-abstract:marcField>
+   048
+  </bf-abstract:marcField>
+  <bf-abstract:marcField>
+   382
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   18yd
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   104
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/MediumComponentQualifier">
+  <rdfs:label>
+   Medium component qualifier
+  </rdfs:label>
+  <skos:definition>
+   Relates a medium component to a qualifier (solo, optional, etc.) that affects the medium component
+  </skos:definition>
+  <bf-abstract:marcField>
+   048
+  </bf-abstract:marcField>
+  <bf-abstract:marcField>
+   382
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   18ye
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   105
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/MediumOfPerformance">
+  <rdfs:label>
+   Medium of performance
+  </rdfs:label>
+  <skos:definition>
+   An individual instrument, voice, ensemble, or instrumental group
+  </skos:definition>
+  <bf-abstract:marcField>
+   048
+  </bf-abstract:marcField>
+  <bf-abstract:marcField>
+   382
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   18yf
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   106
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/Mode">
+  <rdfs:label>
+   Mode
+  </rdfs:label>
+  <skos:definition>
+   Mode (not associated with a key) of a musical work
+  </skos:definition>
+  <bf-abstract:sort>
+   18yg
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   107
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:Class>
+ <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/Tempo">
+  <rdfs:label>
+   Tempo
+  </rdfs:label>
+  <skos:definition>
+   The speed of pace of a music work, whether declared in a score or performed
+  </skos:definition>
+  <bf-abstract:sort>
+   18yh
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   108
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
   </dcterms:modified>
  </owl:Class>
  <owl:Class rdf:about="http://id.loc.gov/ontologies/bibframe/Frequency">
@@ -2348,7 +2628,7 @@
    20c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   97
+   109
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2368,7 +2648,7 @@
    20c1
   </bf-abstract:sort>
   <bf-abstract:pos>
-   98
+   110
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2388,7 +2668,7 @@
    20d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   99
+   111
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2411,7 +2691,7 @@
    20e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   100
+   112
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2432,7 +2712,7 @@
    20f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   101
+   113
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2453,7 +2733,7 @@
    20g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   102
+   114
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2474,7 +2754,7 @@
    20h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   103
+   115
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2495,7 +2775,7 @@
    20i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   104
+   116
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2516,7 +2796,7 @@
    20j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   105
+   117
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2536,7 +2816,7 @@
    22c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   106
+   118
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2556,7 +2836,7 @@
    22ca
   </bf-abstract:sort>
   <bf-abstract:pos>
-   107
+   119
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2582,7 +2862,7 @@
    22d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   108
+   120
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2602,7 +2882,7 @@
    22e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   109
+   121
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2622,7 +2902,7 @@
    22f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   110
+   122
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2642,7 +2922,7 @@
    22g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   111
+   123
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2663,7 +2943,7 @@
    22h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   112
+   124
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2683,7 +2963,7 @@
    24c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   113
+   125
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2703,7 +2983,7 @@
    24c1
   </bf-abstract:sort>
   <bf-abstract:pos>
-   114
+   126
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2724,7 +3004,7 @@
    24d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   115
+   127
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2748,7 +3028,7 @@
    24e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   116
+   128
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2771,7 +3051,7 @@
    24f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   117
+   129
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2791,7 +3071,7 @@
    24g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   118
+   130
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2814,7 +3094,7 @@
    24h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   119
+   131
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2834,7 +3114,7 @@
    24i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   120
+   132
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2854,7 +3134,7 @@
    24j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   121
+   133
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2874,7 +3154,7 @@
    24k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   122
+   134
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2894,7 +3174,7 @@
    24l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   123
+   135
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2914,7 +3194,7 @@
    24m
   </bf-abstract:sort>
   <bf-abstract:pos>
-   124
+   136
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2934,7 +3214,7 @@
    24n
   </bf-abstract:sort>
   <bf-abstract:pos>
-   125
+   137
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2954,7 +3234,7 @@
    24o
   </bf-abstract:sort>
   <bf-abstract:pos>
-   126
+   138
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2974,7 +3254,7 @@
    26b
   </bf-abstract:sort>
   <bf-abstract:pos>
-   127
+   139
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -2995,7 +3275,7 @@
    26c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   128
+   140
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3016,7 +3296,7 @@
    26d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   129
+   141
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3037,7 +3317,7 @@
    26e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   130
+   142
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3058,7 +3338,7 @@
    26f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   131
+   143
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3085,7 +3365,7 @@
    26g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   132
+   144
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3106,7 +3386,7 @@
    26h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   133
+   145
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3127,7 +3407,7 @@
    26i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   134
+   146
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3148,7 +3428,7 @@
    26j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   135
+   147
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3168,7 +3448,7 @@
    26k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   136
+   148
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3189,7 +3469,7 @@
    26l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   137
+   149
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3210,7 +3490,7 @@
    26m
   </bf-abstract:sort>
   <bf-abstract:pos>
-   138
+   150
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3230,7 +3510,7 @@
    26n
   </bf-abstract:sort>
   <bf-abstract:pos>
-   139
+   151
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3251,7 +3531,7 @@
    26o
   </bf-abstract:sort>
   <bf-abstract:pos>
-   140
+   152
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3272,7 +3552,7 @@
    26p
   </bf-abstract:sort>
   <bf-abstract:pos>
-   141
+   153
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3292,7 +3572,7 @@
    26qa
   </bf-abstract:sort>
   <bf-abstract:pos>
-   142
+   154
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3313,7 +3593,7 @@
    26qc
   </bf-abstract:sort>
   <bf-abstract:pos>
-   143
+   155
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3334,7 +3614,7 @@
    26qd
   </bf-abstract:sort>
   <bf-abstract:pos>
-   144
+   156
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3355,7 +3635,7 @@
    26qe
   </bf-abstract:sort>
   <bf-abstract:pos>
-   145
+   157
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3376,7 +3656,7 @@
    26qf
   </bf-abstract:sort>
   <bf-abstract:pos>
-   146
+   158
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3397,7 +3677,7 @@
    26qg
   </bf-abstract:sort>
   <bf-abstract:pos>
-   147
+   159
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3418,7 +3698,7 @@
    26qh
   </bf-abstract:sort>
   <bf-abstract:pos>
-   148
+   160
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3439,7 +3719,7 @@
    26qi
   </bf-abstract:sort>
   <bf-abstract:pos>
-   149
+   161
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3460,7 +3740,7 @@
    26qj
   </bf-abstract:sort>
   <bf-abstract:pos>
-   150
+   162
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3481,7 +3761,7 @@
    26qk
   </bf-abstract:sort>
   <bf-abstract:pos>
-   151
+   163
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3501,7 +3781,7 @@
    26ql
   </bf-abstract:sort>
   <bf-abstract:pos>
-   152
+   164
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3521,7 +3801,7 @@
    28c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   153
+   165
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3542,7 +3822,7 @@
    28ca
   </bf-abstract:sort>
   <bf-abstract:pos>
-   154
+   166
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3563,7 +3843,7 @@
    28cb
   </bf-abstract:sort>
   <bf-abstract:pos>
-   155
+   167
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3583,7 +3863,7 @@
    28d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   156
+   168
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3610,7 +3890,7 @@
    28e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   157
+   169
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3637,7 +3917,7 @@
    28f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   158
+   170
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3665,7 +3945,7 @@
    28g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   159
+   171
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3689,7 +3969,7 @@
    28h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   160
+   172
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3716,7 +3996,7 @@
    28i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   161
+   173
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3736,7 +4016,7 @@
    28k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   162
+   174
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3757,7 +4037,7 @@
    28l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   163
+   175
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3778,7 +4058,7 @@
    28m
   </bf-abstract:sort>
   <bf-abstract:pos>
-   164
+   176
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3799,7 +4079,7 @@
    28n
   </bf-abstract:sort>
   <bf-abstract:pos>
-   165
+   177
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3819,7 +4099,7 @@
    28o
   </bf-abstract:sort>
   <bf-abstract:pos>
-   166
+   178
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3840,7 +4120,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   168
+   180
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3864,7 +4144,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   167
+   179
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3888,7 +4168,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   185
+   197
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3912,7 +4192,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   169
+   181
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3936,7 +4216,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   170
+   182
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3963,7 +4243,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   171
+   183
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -3984,7 +4264,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   172
+   184
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4005,7 +4285,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   173
+   185
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4029,7 +4309,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   174
+   186
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4053,7 +4333,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   175
+   187
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4074,7 +4354,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   176
+   188
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4098,7 +4378,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   177
+   189
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4119,7 +4399,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   178
+   190
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4143,7 +4423,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   179
+   191
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4170,7 +4450,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   204
+   216
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4194,7 +4474,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   180
+   192
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4218,7 +4498,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   181
+   193
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4245,7 +4525,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   208
+   220
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4269,7 +4549,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   182
+   194
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4293,7 +4573,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   183
+   195
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4317,7 +4597,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   184
+   196
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4344,7 +4624,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   205
+   217
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4371,7 +4651,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   206
+   218
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4398,7 +4678,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   207
+   219
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4422,7 +4702,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   187
+   199
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4446,7 +4726,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   186
+   198
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4470,7 +4750,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   203
+   215
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4494,7 +4774,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   188
+   200
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4521,7 +4801,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   189
+   201
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4545,7 +4825,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   190
+   202
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4572,7 +4852,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   191
+   203
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4599,7 +4879,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   192
+   204
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4623,7 +4903,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   209
+   221
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4647,7 +4927,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   193
+   205
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4671,7 +4951,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   194
+   206
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4695,7 +4975,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   195
+   207
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4719,7 +4999,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   196
+   208
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4743,7 +5023,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   197
+   209
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4767,7 +5047,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   198
+   210
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4791,7 +5071,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   199
+   211
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4815,7 +5095,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   200
+   212
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4839,7 +5119,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   201
+   213
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4866,7 +5146,7 @@
    30c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   202
+   214
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4892,7 +5172,7 @@
    32c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   210
+   222
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4912,7 +5192,7 @@
    32d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   211
+   223
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4938,7 +5218,7 @@
    32e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   212
+   224
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4964,7 +5244,7 @@
    32f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   213
+   225
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -4990,7 +5270,7 @@
   </rdfs:label>
   <bf-abstract:sort/>
   <bf-abstract:pos>
-   227
+   238
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -5983,7 +6263,7 @@
    Instrumental, vocal, and/or other medium of performance for which a musical resource was originally conceived, written or performed.
   </skos:definition>
   <rdfs:label>
-   Music medium of performance
+   Music medium
   </rdfs:label>
   <bf-abstract:marcField>
    no mapping
@@ -5999,6 +6279,9 @@
   </bf-abstract:status>
   <dcterms:modified>
    2016-04-21 (New)
+  </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (Revised label [GH135])
   </dcterms:modified>
  </owl:ObjectProperty>
  <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/instrument">
@@ -6049,7 +6332,7 @@
   <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/Work"/>
   <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/Ensemble"/>
   <skos:definition>
-   Ensemble applicable to the Work.
+   Composition of the ensemble applicable to the Work.
   </skos:definition>
   <rdfs:label>
    Ensemble
@@ -6068,6 +6351,9 @@
   </dcterms:modified>
   <dcterms:modified>
    2021-06-09 (Changed domain [GH56], Modified definition [GH56])
+  </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (Modified definition [GH135])
   </dcterms:modified>
  </owl:ObjectProperty>
  <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/ensembleType">
@@ -6160,6 +6446,9 @@
   <dcterms:modified>
    2016-04-21 (New)
   </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (Deprecated [GH137])
+  </dcterms:modified>
  </owl:DatatypeProperty>
  <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/musicOpusNumber">
   <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/Work"/>
@@ -6181,6 +6470,9 @@
   </bf-abstract:status>
   <dcterms:modified>
    2016-04-21 (New)
+  </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (Deprecated [GH137])
   </dcterms:modified>
  </owl:DatatypeProperty>
  <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/musicThematicNumber">
@@ -6213,6 +6505,9 @@
   <dcterms:modified>
    2016-04-21 (New)
   </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (Deprecated [GH137])
+  </dcterms:modified>
  </owl:DatatypeProperty>
  <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/musicKey">
   <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/Work"/>
@@ -6243,6 +6538,9 @@
   </bf-abstract:status>
   <dcterms:modified>
    2016-04-21 (New)
+  </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (Deprecated [GH137])
   </dcterms:modified>
  </owl:DatatypeProperty>
  <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/legalDate">
@@ -7241,39 +7539,6 @@
    2017-02-03 (changed from data to object property)
   </dcterms:modified>
  </owl:ObjectProperty>
- <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/awards">
-  <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-  <skos:definition>
-   Information on awards associated with the described resource.
-  </skos:definition>
-  <skos:editorialNote>
-   See also the ARM Ontology for strategies to model this information in greater detail.
-  </skos:editorialNote>
-  <rdfs:comment>
-   Suggested use - With Work or Instance
-  </rdfs:comment>
-  <rdfs:label>
-   Award note
-  </rdfs:label>
-  <bf-abstract:marcField>
-   586--/3+a
-  </bf-abstract:marcField>
-  <bf-abstract:sort>
-   11r
-  </bf-abstract:sort>
-  <bf-abstract:pos>
-   84
-  </bf-abstract:pos>
-  <bf-abstract:status>
-   accepted
-  </bf-abstract:status>
-  <dcterms:modified>
-   2016-04-21 (New)
-  </dcterms:modified>
-  <dcterms:modified>
-   2021-06-09 (Added note [GH37])
-  </dcterms:modified>
- </owl:DatatypeProperty>
  <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/credits">
   <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
   <skos:definition>
@@ -7301,6 +7566,271 @@
    2016-04-21 (New)
   </dcterms:modified>
  </owl:DatatypeProperty>
+ <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/awards">
+  <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  <skos:definition>
+   Information on awards associated with the described resource.
+  </skos:definition>
+  <skos:editorialNote>
+   See also the ARM Ontology for strategies to model this information in greater detail.
+  </skos:editorialNote>
+  <rdfs:comment>
+   Suggested use - With Work or Instance
+  </rdfs:comment>
+  <rdfs:label>
+   Award note
+  </rdfs:label>
+  <bf-abstract:marcField>
+   586--/3+a
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   11ra
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   84
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2016-04-21 (New)
+  </dcterms:modified>
+  <dcterms:modified>
+   2021-06-09 (Added note [GH37])
+  </dcterms:modified>
+ </owl:DatatypeProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/ensembleSize">
+  <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/Work"/>
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/EnsembleSize"/>
+  <skos:definition>
+   Relates a work to the musical ensemble size
+  </skos:definition>
+  <rdfs:label>
+   Ensemble size
+  </rdfs:label>
+  <bf-abstract:sort>
+   11s
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   85
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/keyMode">
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/KeyMode"/>
+  <skos:definition>
+   Relates a work to a musical key and mode
+  </skos:definition>
+  <rdfs:comment>
+   Suggested use - With Work or Hub
+  </rdfs:comment>
+  <rdfs:label>
+   Key and mode
+  </rdfs:label>
+  <bf-abstract:marcField>
+   384--/a
+  </bf-abstract:marcField>
+  <bf-abstract:sort>
+   11sa
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   86
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/mediumComponent">
+  <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/Work"/>
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/MediumComponent"/>
+  <skos:definition>
+   Relates a work to a medium component
+  </skos:definition>
+  <rdfs:label>
+   Medium component
+  </rdfs:label>
+  <bf-abstract:sort>
+   11sb
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   87
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/mediumComponentQualifier">
+  <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/MediumComponent"/>
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/MediumComponentQualifer"/>
+  <skos:definition>
+   Relates a medium component to a qualifier that affects the medium of component
+  </skos:definition>
+  <rdfs:label>
+   Medium component qualifier
+  </rdfs:label>
+  <bf-abstract:sort>
+   11sc
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   88
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/mediumOfPerformance">
+  <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/MediumComponent or Contribution"/>
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/MediumOfPerformance"/>
+  <skos:definition>
+   Relates a work to a musical medium of performance
+  </skos:definition>
+  <rdfs:label>
+   Medium of performance
+  </rdfs:label>
+  <bf-abstract:sort>
+   11sd
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   89
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/mode">
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/Mode"/>
+  <skos:definition>
+   Relates a work to a music mode
+  </skos:definition>
+  <rdfs:comment>
+   Suggested use - With Work or Hub
+  </rdfs:comment>
+  <rdfs:label>
+   Mode
+  </rdfs:label>
+  <bf-abstract:sort>
+   11se
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   90
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/tempo">
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/Tempo"/>
+  <skos:definition>
+   Relates a work to a music tempo
+  </skos:definition>
+  <rdfs:comment>
+   Suggested use - With Work or Hub
+  </rdfs:comment>
+  <rdfs:label>
+   Tempo
+  </rdfs:label>
+  <bf-abstract:sort>
+   11sf
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   91
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
+ <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/numberOfHands">
+  <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/MediumComponent"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  <skos:definition>
+   Relates a medium component to the number of hands required for performance
+  </skos:definition>
+  <rdfs:label>
+   Number of hands
+  </rdfs:label>
+  <bf-abstract:sort>
+   11sg
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   92
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:DatatypeProperty>
+ <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/phonogramDate">
+  <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  <skos:definition>
+   Relates a work or instance to a phonogram copyright date for a work that is an audio recording
+  </skos:definition>
+  <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/date"/>
+  <rdfs:comment>
+   Suggested use - With Work or Instance
+  </rdfs:comment>
+  <rdfs:label>
+   Phonogram date
+  </rdfs:label>
+  <bf-abstract:sort>
+   11sh
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   93
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:DatatypeProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/usesMediumOfPerformance">
+  <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/Work"/>
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/MediumOfPerformance"/>
+  <skos:definition>
+   The medium of performance used by a contributing agent
+  </skos:definition>
+  <rdfs:label>
+   Uses medium of performance
+  </rdfs:label>
+  <bf-abstract:sort>
+   11si
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   94
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
  <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/subject">
   <skos:definition>
    Subject term(s) describing a resource.
@@ -7321,7 +7851,7 @@
    13c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   85
+   95
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7353,7 +7883,7 @@
    13c1
   </bf-abstract:sort>
   <bf-abstract:pos>
-   86
+   96
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7383,7 +7913,7 @@
    13d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   87
+   97
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7408,7 +7938,7 @@
    13e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   88
+   98
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7439,7 +7969,7 @@
    13f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   89
+   99
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7464,7 +7994,7 @@
    13g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   90
+   100
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7489,7 +8019,7 @@
    13h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   91
+   101
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7514,7 +8044,7 @@
    13i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   92
+   102
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7539,7 +8069,7 @@
    13j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   93
+   103
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7564,7 +8094,7 @@
    13k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   94
+   104
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7589,7 +8119,7 @@
    15d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   95
+   105
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7614,7 +8144,7 @@
    15e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   96
+   106
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7639,7 +8169,7 @@
    15f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   97
+   107
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7664,7 +8194,7 @@
    15g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   98
+   108
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7686,7 +8216,7 @@
    15h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   99
+   109
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7710,7 +8240,7 @@
    15i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   100
+   110
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7735,7 +8265,7 @@
    15j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   101
+   111
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7757,7 +8287,7 @@
    15k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   102
+   112
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7782,7 +8312,7 @@
    15l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   103
+   113
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7807,7 +8337,7 @@
    15m
   </bf-abstract:sort>
   <bf-abstract:pos>
-   104
+   114
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7832,7 +8362,7 @@
    15n
   </bf-abstract:sort>
   <bf-abstract:pos>
-   105
+   115
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7857,7 +8387,7 @@
    15o
   </bf-abstract:sort>
   <bf-abstract:pos>
-   106
+   116
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7881,7 +8411,7 @@
    17b
   </bf-abstract:sort>
   <bf-abstract:pos>
-   107
+   117
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7905,7 +8435,7 @@
    17c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   108
+   118
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7938,7 +8468,7 @@
    17d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   109
+   119
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7968,7 +8498,7 @@
    17e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   110
+   120
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -7992,7 +8522,7 @@
    17f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   111
+   121
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8022,7 +8552,7 @@
    17g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   112
+   122
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8053,7 +8583,7 @@
    17h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   113
+   123
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8084,7 +8614,7 @@
    17i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   114
+   124
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8114,7 +8644,7 @@
    19c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   115
+   125
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8141,7 +8671,7 @@
    19d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   116
+   126
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8164,7 +8694,7 @@
    19e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   117
+   127
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8197,7 +8727,7 @@
    19f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   118
+   128
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8227,7 +8757,7 @@
    19g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   119
+   129
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8254,7 +8784,7 @@
    19h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   120
+   130
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8281,7 +8811,7 @@
    19i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   121
+   131
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8306,7 +8836,7 @@
    19k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   122
+   132
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8330,7 +8860,7 @@
    21c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   123
+   133
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8364,7 +8894,7 @@
    21d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   124
+   134
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8390,7 +8920,7 @@
    21d8
   </bf-abstract:sort>
   <bf-abstract:pos>
-   125
+   135
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8416,7 +8946,7 @@
    21d9
   </bf-abstract:sort>
   <bf-abstract:pos>
-   126
+   136
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8443,7 +8973,7 @@
    21e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   127
+   137
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8471,7 +9001,7 @@
    21e1
   </bf-abstract:sort>
   <bf-abstract:pos>
-   128
+   138
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8498,7 +9028,7 @@
    21f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   129
+   139
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8520,13 +9050,13 @@
   </skos:definition>
   <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/materialOf"/>
   <rdfs:label>
-   Appllied material of
+   Applied material of
   </rdfs:label>
   <bf-abstract:sort>
    21f1
   </bf-abstract:sort>
   <bf-abstract:pos>
-   130
+   140
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8551,7 +9081,7 @@
    21g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   131
+   141
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8572,7 +9102,7 @@
    21h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   132
+   142
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8600,7 +9130,7 @@
    21i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   133
+   143
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8622,7 +9152,7 @@
    21j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   134
+   144
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8644,7 +9174,7 @@
    21k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   135
+   145
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8666,7 +9196,7 @@
    21l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   136
+   146
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8691,7 +9221,7 @@
    21m
   </bf-abstract:sort>
   <bf-abstract:pos>
-   137
+   147
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8716,7 +9246,7 @@
    21n
   </bf-abstract:sort>
   <bf-abstract:pos>
-   138
+   148
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8738,7 +9268,7 @@
    21o
   </bf-abstract:sort>
   <bf-abstract:pos>
-   139
+   149
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8760,7 +9290,7 @@
    21p
   </bf-abstract:sort>
   <bf-abstract:pos>
-   140
+   150
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8785,7 +9315,7 @@
    21q
   </bf-abstract:sort>
   <bf-abstract:pos>
-   141
+   151
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8810,7 +9340,7 @@
    21r
   </bf-abstract:sort>
   <bf-abstract:pos>
-   142
+   152
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8832,7 +9362,7 @@
    21s
   </bf-abstract:sort>
   <bf-abstract:pos>
-   143
+   153
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8854,7 +9384,7 @@
    21t
   </bf-abstract:sort>
   <bf-abstract:pos>
-   144
+   154
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8878,7 +9408,7 @@
    21u
   </bf-abstract:sort>
   <bf-abstract:pos>
-   145
+   155
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8908,7 +9438,7 @@
    23c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   146
+   156
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8935,7 +9465,7 @@
    23d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   147
+   157
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8966,7 +9496,7 @@
    23e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   148
+   158
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -8988,7 +9518,7 @@
    23f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   149
+   159
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9010,7 +9540,7 @@
    23g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   150
+   160
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9030,7 +9560,7 @@
    23h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   151
+   161
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9058,7 +9588,7 @@
    23i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   152
+   162
   </bf-abstract:pos>
   <bf-abstract:status>
    bibframe deprecated
@@ -9088,7 +9618,7 @@
    23j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   153
+   163
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9112,7 +9642,7 @@
    23k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   154
+   164
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9140,7 +9670,7 @@
    25c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   155
+   165
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9163,7 +9693,7 @@
    27b
   </bf-abstract:sort>
   <bf-abstract:pos>
-   156
+   166
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9196,7 +9726,7 @@
    27c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   157
+   167
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9226,7 +9756,7 @@
    27d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   158
+   168
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9260,7 +9790,7 @@
    27e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   159
+   169
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9300,7 +9830,7 @@
    27f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   160
+   170
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9336,7 +9866,7 @@
    27g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   162
+   172
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9366,7 +9896,7 @@
    27h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   163
+   173
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9390,7 +9920,7 @@
    27h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   161
+   171
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9420,7 +9950,7 @@
    27i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   164
+   174
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9442,7 +9972,7 @@
    27j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   165
+   175
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9466,7 +9996,7 @@
    29c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   166
+   176
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9493,7 +10023,7 @@
    29d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   167
+   177
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9526,7 +10056,7 @@
    29e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   168
+   178
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9560,7 +10090,7 @@
    29f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   169
+   179
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9594,7 +10124,7 @@
    29g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   170
+   180
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9631,7 +10161,7 @@
    29h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   171
+   181
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9665,7 +10195,7 @@
    29i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   172
+   182
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9679,7 +10209,7 @@
  </owl:ObjectProperty>
  <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/hasDerivative">
   <skos:definition>
-   Resource that is a modification of the described work
+   A relationship which records that the described resource has a derivative resource
   </skos:definition>
   <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/relatedTo"/>
   <rdfs:comment>
@@ -9699,7 +10229,7 @@
    29j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   173
+   183
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9710,10 +10240,13 @@
   <dcterms:modified>
    2016-04-29 (added inverse)
   </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (revised definition [GH138])
+  </dcterms:modified>
  </owl:ObjectProperty>
  <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/derivativeOf">
   <skos:definition>
-   Source work from which the described resource is derived
+   A relationship that records the fact that one resource is a derivative of another resource
   </skos:definition>
   <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/relatedTo"/>
   <rdfs:comment>
@@ -9733,7 +10266,7 @@
    29k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   174
+   184
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9743,6 +10276,9 @@
   </dcterms:modified>
   <dcterms:modified>
    2016-04-29 (added inverse)
+  </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (revised definition [GH138])
   </dcterms:modified>
  </owl:ObjectProperty>
  <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/precededBy">
@@ -9767,7 +10303,7 @@
    29l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   175
+   185
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9801,7 +10337,7 @@
    29m
   </bf-abstract:sort>
   <bf-abstract:pos>
-   176
+   186
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9832,7 +10368,7 @@
    29n
   </bf-abstract:sort>
   <bf-abstract:pos>
-   177
+   187
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9863,7 +10399,7 @@
    29o
   </bf-abstract:sort>
   <bf-abstract:pos>
-   178
+   188
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9896,7 +10432,7 @@
    31b
   </bf-abstract:sort>
   <bf-abstract:pos>
-   179
+   189
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9927,7 +10463,7 @@
    31c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   180
+   190
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9957,7 +10493,7 @@
    31d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   181
+   191
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -9984,7 +10520,7 @@
    31e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   182
+   192
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10017,7 +10553,7 @@
    31f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   183
+   193
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10051,7 +10587,7 @@
    31g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   184
+   194
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10085,7 +10621,7 @@
    31h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   185
+   195
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10122,7 +10658,7 @@
    31i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   186
+   196
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10159,7 +10695,7 @@
    31j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   187
+   197
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10196,7 +10732,7 @@
    31k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   188
+   198
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10230,7 +10766,7 @@
    31l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   189
+   199
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10257,7 +10793,7 @@
    31l1
   </bf-abstract:sort>
   <bf-abstract:pos>
-   190
+   200
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10284,7 +10820,7 @@
    31l2
   </bf-abstract:sort>
   <bf-abstract:pos>
-   191
+   201
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10315,7 +10851,7 @@
    31m
   </bf-abstract:sort>
   <bf-abstract:pos>
-   192
+   202
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10352,7 +10888,7 @@
    31n
   </bf-abstract:sort>
   <bf-abstract:pos>
-   193
+   203
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10389,7 +10925,7 @@
    31o
   </bf-abstract:sort>
   <bf-abstract:pos>
-   194
+   204
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10420,7 +10956,7 @@
    31p
   </bf-abstract:sort>
   <bf-abstract:pos>
-   195
+   205
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10454,7 +10990,7 @@
    31q
   </bf-abstract:sort>
   <bf-abstract:pos>
-   196
+   206
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10488,7 +11024,7 @@
    31r
   </bf-abstract:sort>
   <bf-abstract:pos>
-   197
+   207
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10521,7 +11057,7 @@
    31s
   </bf-abstract:sort>
   <bf-abstract:pos>
-   198
+   208
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10555,7 +11091,7 @@
    31t
   </bf-abstract:sort>
   <bf-abstract:pos>
-   199
+   209
   </bf-abstract:pos>
   <bf-abstract:status>
    bibframe deprecated
@@ -10589,7 +11125,7 @@
    31u
   </bf-abstract:sort>
   <bf-abstract:pos>
-   200
+   210
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10620,7 +11156,7 @@
    31v
   </bf-abstract:sort>
   <bf-abstract:pos>
-   201
+   211
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10654,7 +11190,7 @@
    31wa
   </bf-abstract:sort>
   <bf-abstract:pos>
-   212
+   222
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10688,7 +11224,7 @@
    31wb
   </bf-abstract:sort>
   <bf-abstract:pos>
-   209
+   219
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10722,7 +11258,7 @@
    31wc
   </bf-abstract:sort>
   <bf-abstract:pos>
-   202
+   212
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10759,7 +11295,7 @@
    31wd
   </bf-abstract:sort>
   <bf-abstract:pos>
-   203
+   213
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10796,7 +11332,7 @@
    31we
   </bf-abstract:sort>
   <bf-abstract:pos>
-   204
+   214
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10830,7 +11366,7 @@
    31wf
   </bf-abstract:sort>
   <bf-abstract:pos>
-   205
+   215
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10864,7 +11400,7 @@
    31wg
   </bf-abstract:sort>
   <bf-abstract:pos>
-   206
+   216
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10898,7 +11434,7 @@
    31wh
   </bf-abstract:sort>
   <bf-abstract:pos>
-   208
+   218
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10932,7 +11468,7 @@
    31wi
   </bf-abstract:sort>
   <bf-abstract:pos>
-   210
+   220
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -10966,7 +11502,7 @@
    31wj
   </bf-abstract:sort>
   <bf-abstract:pos>
-   211
+   221
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11000,7 +11536,7 @@
    31wk
   </bf-abstract:sort>
   <bf-abstract:pos>
-   207
+   217
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11034,7 +11570,7 @@
    31wl
   </bf-abstract:sort>
   <bf-abstract:pos>
-   213
+   223
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11061,7 +11597,7 @@
    33c
   </bf-abstract:sort>
   <bf-abstract:pos>
-   214
+   224
   </bf-abstract:pos>
   <bf-abstract:status>
    bibframe deprecated
@@ -11091,7 +11627,7 @@
    33d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   215
+   225
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11118,7 +11654,7 @@
    33d1
   </bf-abstract:sort>
   <bf-abstract:pos>
-   216
+   226
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11140,7 +11676,7 @@
    33e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   217
+   227
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11152,10 +11688,32 @@
    2017-02-03 (Changed from data to object property, adjusted label and definition)
   </dcterms:modified>
  </owl:ObjectProperty>
+ <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/dramaticRole">
+  <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/Contribution"/>
+  <rdfs:range rdf:resource="http://id.loc.gov/ontologies/bibframe/DramaticRole"/>
+  <skos:definition>
+   Relates a contribution to a dramatic role
+  </skos:definition>
+  <rdfs:label>
+   Dramatic Role
+  </rdfs:label>
+  <bf-abstract:sort>
+   33f
+  </bf-abstract:sort>
+  <bf-abstract:pos>
+   228
+  </bf-abstract:pos>
+  <bf-abstract:status>
+   accepted
+  </bf-abstract:status>
+  <dcterms:modified>
+   2025-12-01 (New [GH134])
+  </dcterms:modified>
+ </owl:ObjectProperty>
  <owl:ObjectProperty rdf:about="http://id.loc.gov/ontologies/bibframe/derivedFrom">
   <rdfs:domain rdf:resource="http://id.loc.gov/ontologies/bibframe/AdminMetadata"/>
   <skos:definition>
-   Link to the metadata that was the source of the data
+   Meant to establish a link from a description that was derived from, perhaps via copy, another description; example: X description/metadata was derived from Y description/metadata
   </skos:definition>
   <rdfs:label>
    Source metadata
@@ -11167,7 +11725,7 @@
    35d
   </bf-abstract:sort>
   <bf-abstract:pos>
-   218
+   229
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11180,6 +11738,9 @@
   </dcterms:modified>
   <dcterms:modified>
    2025-01-23 (Ontological correction - partially addresses [GH121])
+  </dcterms:modified>
+  <dcterms:modified>
+   2025-12-01 (revised definition [GH138])
   </dcterms:modified>
  </owl:ObjectProperty>
  <owl:DatatypeProperty rdf:about="http://id.loc.gov/ontologies/bibframe/changeDate">
@@ -11199,7 +11760,7 @@
    35e
   </bf-abstract:sort>
   <bf-abstract:pos>
-   219
+   230
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11225,7 +11786,7 @@
    35f
   </bf-abstract:sort>
   <bf-abstract:pos>
-   220
+   231
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11253,7 +11814,7 @@
    35g
   </bf-abstract:sort>
   <bf-abstract:pos>
-   221
+   232
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11281,7 +11842,7 @@
    35h
   </bf-abstract:sort>
   <bf-abstract:pos>
-   222
+   233
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11306,7 +11867,7 @@
    35i
   </bf-abstract:sort>
   <bf-abstract:pos>
-   223
+   234
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11330,7 +11891,7 @@
    35j
   </bf-abstract:sort>
   <bf-abstract:pos>
-   224
+   235
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11361,7 +11922,7 @@
    35k
   </bf-abstract:sort>
   <bf-abstract:pos>
-   225
+   236
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted
@@ -11387,7 +11948,7 @@
    35l
   </bf-abstract:sort>
   <bf-abstract:pos>
-   226
+   237
   </bf-abstract:pos>
   <bf-abstract:status>
    accepted

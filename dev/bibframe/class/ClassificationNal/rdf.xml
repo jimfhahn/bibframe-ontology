@@ -5,7 +5,7 @@
  </rdfs:label>
  <rdfs:subClassOf rdf:resource="http://id.loc.gov/ontologies/bibframe/Classification"/>
  <skos:definition>
-  National Library of Agriculter number used for subject access
+  National Library of Agriculture number used for subject access
  </skos:definition>
  <bf-abstract:marcField>
   070--/a
@@ -14,7 +14,7 @@
   18y
  </bf-abstract:sort>
  <bf-abstract:pos>
-  96
+  100
  </bf-abstract:pos>
  <bf-abstract:status>
   accepted

@@ -6,13 +6,13 @@
  </skos:definition>
  <rdfs:subPropertyOf rdf:resource="http://id.loc.gov/ontologies/bibframe/materialOf"/>
  <rdfs:label>
-  Appllied material of
+  Applied material of
  </rdfs:label>
  <bf-abstract:sort>
   21f1
  </bf-abstract:sort>
  <bf-abstract:pos>
-  130
+  140
  </bf-abstract:pos>
  <bf-abstract:status>
   accepted

@@ -4,7 +4,7 @@
   Ensemble
  </rdfs:label>
  <skos:definition>
-  Ensemble
+  Composition of the ensemble, including the size of the ensemble and the medium of performance components
  </skos:definition>
  <bf-abstract:sort>
   15eb
@@ -17,5 +17,8 @@
  </bf-abstract:status>
  <dcterms:modified>
   2021-06-09 (New [GH56])
+ </dcterms:modified>
+ <dcterms:modified>
+  2025-12-01 (Revised definition [GH135])
  </dcterms:modified>
 </owl:Class>

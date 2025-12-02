@@ -6,7 +6,7 @@
   Instrumental, vocal, and/or other medium of performance for which a musical resource was originally conceived, written or performed.
  </skos:definition>
  <rdfs:label>
-  Music medium of performance
+  Music medium
  </rdfs:label>
  <bf-abstract:marcField>
   no mapping
@@ -22,5 +22,8 @@
  </bf-abstract:status>
  <dcterms:modified>
   2016-04-21 (New)
+ </dcterms:modified>
+ <dcterms:modified>
+  2025-12-01 (Revised label [GH135])
  </dcterms:modified>
 </owl:ObjectProperty>
